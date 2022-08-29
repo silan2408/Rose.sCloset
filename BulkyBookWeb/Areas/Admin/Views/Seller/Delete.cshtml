@@ -1,0 +1,53 @@
+﻿@model BulkyBook.Models.Seller
+@{
+
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<form method="post" asp-action="Delete">
+	<input asp-for="Seller_Id" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Delete Seller</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="CompanyName"></label>
+			<input asp-for="CompanyName" disabled class="form-control" />
+		</div>
+			<div class="mb-3">
+			<label asp-for="FullName"></label>
+			<input asp-for="FullName" disabled class="form-control" />
+		</div>
+		
+			<div class="mb-3">
+			<label asp-for="Phone"></label>
+			<input asp-for="Phone" disabled class="form-control" />
+		</div>
+			<div class="mb-3">
+			<label asp-for="Email"></label>
+			<input asp-for="Email" disabled class="form-control" />
+		</div>
+		  <div class="mb-3">
+			  <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                
+            </div>
+            <div class="mb-3">  
+				<label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+            
+            </div>
+		
+		<button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+		<a asp-controller="Seller" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
